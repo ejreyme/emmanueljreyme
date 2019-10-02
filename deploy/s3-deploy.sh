@@ -1,0 +1,1 @@
+AWS_ACCESS_KEY_ID=$ACCESS_KEY AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY aws s3 cp dist/emmanueljreymedotcom s3://emmanueljreyme.com --recursive

@@ -1,12 +1,12 @@
-package com.joonyor.lab
+package com.joonyor.lab.web
 
 import kotlinx.html.*
 
-fun FlowContent.resume() = div {
+fun FlowContent.project() = div {
     id = "content"
     div { classes = setOf("container px-5 my-5")
         div { classes = setOf("text-center mb-5")
-            h1 { +"Resume" }
+            h1 { +"Projects" }
         }
     }
 }

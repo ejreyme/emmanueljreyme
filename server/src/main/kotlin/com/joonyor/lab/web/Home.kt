@@ -1,5 +1,6 @@
-package com.joonyor.lab
+package com.joonyor.lab.web
 
+import com.joonyor.lab.web.Me.showResume
 import kotlinx.html.*
 
 fun FlowContent.home() = div {
@@ -13,7 +14,7 @@ fun FlowContent.home() = div {
                             classes = setOf("badge", "bg-gradient-primary-to-secondary", "text-white", "mb-4")
                             div {
                                 classes = setOf("text-uppercase")
-                                +"Design · Development · Marketing"
+                                +"Design · Development · Deployment"
                             }
                         }
                         div {
@@ -27,23 +28,25 @@ fun FlowContent.home() = div {
                                 +"Get online and grow fast"
                             }
                         }
-                        div {
-                            classes = setOf("d-grid", "gap-3", "d-sm-flex", "justify-content-sm-center", "justify-content-xxl-start", "mb-3")
-                            a {
-                                href = "/resume"
-                                attributes["hx-get"]="/resume"
-                                attributes["hx-target"]="#content"
-                                attributes["hx-push-url"]="true"
-                                classes = setOf("btn", "btn-primary", "btn-lg", "px-5", "py-3", "me-sm-3", "fs-6", "fw-bolder")
-                                +"Resume"
-                            }
-                            a {
-                                href = "/projects"
-                                attributes["hx-get"]="/projects"
-                                attributes["hx-target"]="#content"
-                                attributes["hx-push-url"]="true"
-                                classes = setOf("btn", "btn-outline-dark", "btn-lg", "px-5", "py-3", "fs-6", "fw-bolder")
-                                +"Projects"
+                        if (showResume) {
+                            div {
+                                classes = setOf("d-grid", "gap-3", "d-sm-flex", "justify-content-sm-center", "justify-content-xxl-start", "mb-3")
+                                a {
+                                    href = "/resume"
+                                    attributes["hx-get"]="/resume"
+                                    attributes["hx-target"]="#content"
+                                    attributes["hx-push-url"]="true"
+                                    classes = setOf("btn", "btn-primary", "btn-lg", "px-5", "py-3", "me-sm-3", "fs-6", "fw-bolder")
+                                    +"Resume"
+                                }
+                                a {
+                                    href = "/projects"
+                                    attributes["hx-get"]="/projects"
+                                    attributes["hx-target"]="#content"
+                                    attributes["hx-push-url"]="true"
+                                    classes = setOf("btn", "btn-outline-dark", "btn-lg", "px-5", "py-3", "fs-6", "fw-bolder")
+                                    +"Projects"
+                                }
                             }
                         }
                     }
@@ -84,31 +87,31 @@ fun FlowContent.home() = div {
                         }
                         p {
                             classes = setOf("lead", "fw-light", "mb-4")
-                            +"My name is Start Bootstrap and I help brands grow."
+                            +Me.shortHeader
                         }
                         p {
                             classes = setOf("text-muted")
-                            +"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur autem. Eveniet quasi nobis aliquid cumque officiis sed rem iure ipsa! Praesentium ratione atque dolorem?"
+                            +Me.shortSummary
                         }
                         div {
                             classes = setOf("d-flex", "justify-content-center", "fs-2", "gap-4")
                             a {
                                 classes = setOf("text-gradient")
-                                href = "#!"
+                                href = Me.social.stackoverflow
                                 i {
-                                    classes = setOf("bi", "bi-twitter")
+                                    classes = setOf("bi", "bi-stack-overflow")
                                 }
                             }
                             a {
                                 classes = setOf("text-gradient")
-                                href = "#!"
+                                href = Me.social.linkedin
                                 i {
                                     classes = setOf("bi", "bi-linkedin")
                                 }
                             }
                             a {
                                 classes = setOf("text-gradient")
-                                href = "#!"
+                                href = Me.social.github
                                 i {
                                     classes = setOf("bi", "bi-github")
                                 }

@@ -1,0 +1,7 @@
+services:
+  ktor-cv-app:
+    image: ktor-cv-docker-image
+    environment:
+      PORT: ${PORT}
+    ports:
+      - "9002:8080"

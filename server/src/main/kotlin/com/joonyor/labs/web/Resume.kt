@@ -1,4 +1,4 @@
-package com.joonyor.lab.web
+package com.joonyor.labs.web
 
 import kotlinx.html.*
 

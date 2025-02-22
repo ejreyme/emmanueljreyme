@@ -1,0 +1,26 @@
+
+[versions]
+kotlin-version = "2.1.10"
+kotlinx-browser-version = "0.3"
+kotlinx-html-version = "0.11.0"
+ktor-version = "3.1.0"
+logback-version = "1.4.14"
+
+[libraries]
+ktor-server-html-builder = { module = "io.ktor:ktor-server-html-builder", version.ref = "ktor-version" }
+kotlinx-html = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinx-html-version" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor-version" }
+kotlinx-browser = { module = "org.jetbrains.kotlinx:kotlinx-browser", version.ref = "kotlinx-browser-version" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor-version" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-version" }
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor-version" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
+ktor-server-compression = { module = "io.ktor:ktor-server-compression", version.ref = "ktor-version" }
+ktor-server-rate-limit = { module = "io.ktor:ktor-server-rate-limit", version.ref = "ktor-version"}
+ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor-version"}
+ktor-server-caching-headers = { module = "io.ktor:ktor-server-caching-headers", version.ref = "ktor-version" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-version" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor-version" }

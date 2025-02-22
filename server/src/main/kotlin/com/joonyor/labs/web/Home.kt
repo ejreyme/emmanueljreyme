@@ -1,6 +1,6 @@
-package com.joonyor.lab.web
+package com.joonyor.labs.web
 
-import com.joonyor.lab.web.Me.showResume
+import com.joonyor.labs.web.Me.showResume
 import kotlinx.html.*
 
 fun FlowContent.home() = div {
@@ -14,18 +14,18 @@ fun FlowContent.home() = div {
                             classes = setOf("badge", "bg-gradient-primary-to-secondary", "text-white", "mb-4")
                             div {
                                 classes = setOf("text-uppercase")
-                                +"Design · Development · Deployment"
+                                +Me.headerTopics
                             }
                         }
                         div {
                             classes = setOf("fs-3", "fw-light", "text-muted")
-                            +"I can help your business to"
+                            +Me.headerIntro
                         }
                         h1 {
                             classes = setOf("display-3", "fw-bolder", "mb-5")
                             span {
                                 classes = setOf("text-gradient", "d-inline")
-                                +"Get online and grow fast"
+                                +Me.headerIntroStatement
                             }
                         }
                         if (showResume) {
@@ -87,11 +87,11 @@ fun FlowContent.home() = div {
                         }
                         p {
                             classes = setOf("lead", "fw-light", "mb-4")
-                            +Me.shortHeader
+                            +Me.aboutMeHeader
                         }
                         p {
                             classes = setOf("text-muted")
-                            +Me.shortSummary
+                            +Me.aboutMeSummery
                         }
                         div {
                             classes = setOf("d-flex", "justify-content-center", "fs-2", "gap-4")

@@ -1,9 +1,8 @@
-
 plugins {
-    kotlin("jvm") version "2.1.10" apply false
-    kotlin("multiplatform") version "2.1.10" apply false
-    id("io.ktor.plugin") version "3.0.3" apply false
     base
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.multiplatform) apply false
+    alias(libs.plugins.ktor) apply false
 }
 
 subprojects {
@@ -11,6 +10,6 @@ subprojects {
         mavenCentral()
     }
 
-    group = "com.example.com"
+    group = "com.joonyor.labs"
     version = "0.0.1"
 }
